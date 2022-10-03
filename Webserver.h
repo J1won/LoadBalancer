@@ -50,6 +50,8 @@ public:
      //all servers empty()
      bool all_processors_empty();
 
+     char get_name(int p);
+
 private:
      processor *serverCollection;
      int arr_sz;

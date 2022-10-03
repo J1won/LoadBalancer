@@ -42,11 +42,15 @@ bool Webserver::all_processors_empty() {
      //loop through array
      //if any position is filled,
      //return false immediately
-     
+
      for (int i = 0; i < arr_sz; i++) {
           if (serverCollection[i].is_filled())
                return false;
      }
      return true;
-
 }
+
+char Webserver::get_name(int p) {
+     return serverCollection[p].name;
+}
+

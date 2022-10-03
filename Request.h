@@ -10,7 +10,7 @@ using namespace std;
 class Request{
 public:
      // constructor 
-          // generate random IP address and process time
+     // generate random IP address and process time
      Request();
      
      //functions that return ip_in, ip_out, and process_time
