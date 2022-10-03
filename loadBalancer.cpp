@@ -47,6 +47,7 @@ int main() {
                curr_req = requests_q.front();
                wb.request_to_server(curr_req, idle_pos);
                requests_q.pop();
+               
           }
 
 
