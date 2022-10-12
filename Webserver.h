@@ -5,7 +5,7 @@
 #include <string>   
 using namespace std;
 
-/// @brief Processor struct holds and drops a request
+/// @brief processor struct holds and drops a request
 
 struct processor {
      /**

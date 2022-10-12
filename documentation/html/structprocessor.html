@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="Screen_Shot_2022-10-11_at_8.52.24_PM-removebg-preview.png"/></td>
   <td id="projectalign">
    <div id="projectname">LoadBalancer<span id="projectnumber">&#160;1.0.0</span>
    </div>
@@ -79,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Processor.  
+<p>processor struct holds and drops a request  
  <a href="structprocessor.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_webserver_8h_source.html">Webserver.h</a>&gt;</code></p>
@@ -87,8 +86,10 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aee3cda08b0dfea8093bff17a2480fcd7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprocessor.html#aee3cda08b0dfea8093bff17a2480fcd7">processor</a> (char n)</td></tr>
+<tr class="memdesc:aee3cda08b0dfea8093bff17a2480fcd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="structprocessor.html#aee3cda08b0dfea8093bff17a2480fcd7">More...</a><br /></td></tr>
 <tr class="separator:aee3cda08b0dfea8093bff17a2480fcd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3867c2dac0a421f49f065919a8d00482"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprocessor.html#a3867c2dac0a421f49f065919a8d00482">is_filled</a> ()</td></tr>
+<tr class="memdesc:a3867c2dac0a421f49f065919a8d00482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return if the processor is filled and decrement the <a class="el" href="class_request.html" title="Request class generates values of a random request.">Request</a> time to keep track of the processing time.  <a href="structprocessor.html#a3867c2dac0a421f49f065919a8d00482">More...</a><br /></td></tr>
 <tr class="separator:a3867c2dac0a421f49f065919a8d00482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -103,7 +104,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a953cdc2bab519b44d9fcc96a53b82ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Processor. </p>
+<div class="textblock"><p >processor struct holds and drops a request </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aee3cda08b0dfea8093bff17a2480fcd7" name="aee3cda08b0dfea8093bff17a2480fcd7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee3cda08b0dfea8093bff17a2480fcd7">&#9670;&#160;</a></span>processor()</h2>
@@ -128,6 +129,14 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Default constructor. </p>
+<p >Assign the given name to the processor and initialize the <a class="el" href="class_request.html" title="Request class generates values of a random request.">Request</a> values. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Name of the processor </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -154,6 +163,11 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Return if the processor is filled and decrement the <a class="el" href="class_request.html" title="Request class generates values of a random request.">Request</a> time to keep track of the processing time. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the request time is not done. </dd>
+<dd>
+false if the request time is done. </dd></dl>
 
 </div>
 </div>
@@ -197,6 +211,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >The time, IP in, and IP out of the current request. </p>
 
 </div>
 </div>
@@ -211,6 +226,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >The name of the processor. </p>
 
 </div>
 </div>

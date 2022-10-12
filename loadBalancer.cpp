@@ -1,14 +1,19 @@
 
-//holds a queue of requests and keeps track of time
 
 #include <iostream>
 #include <queue>
 #include "Webserver.h"
 #include "Request.h"
 using namespace std;
+//holds a queue of requests and keeps track of time
+
+
+/** 
+ * @mainpage Click on a class in the Classes tab to view the functionalities of each class and function. 
+ */
 
 int main() {
-
+     /// @brief 
      int servers = 0;
      int time = 0;
      int idle_pos = -1;

@@ -6,20 +6,39 @@
 #include <string>  
 using namespace std;
 
-// generates random ipv4 addresses and times for each request
+/// @brief Request class generates values of a random request.
+
 class Request{
 public:
-     // constructor 
-     // generate random IP address and process time
+     /**
+     * Generate a random IPv4 address and processing time.
+     * @brief Default constructor.
+     */
      Request();
-     
-     //functions that return ip_in, ip_out, and process_time
+
+     /**
+     * @brief Get in IP address of request.
+     * @return String of the IP address.
+     */
      string get_IP_in();
+
+     /**
+     * @brief Get out IP address of request.
+     * @return String of the IP address.
+     */
      string get_IP_out();
+
+     /**
+     * @brief Get processing time of request.
+     * @return Integer of the processing time.
+     */
      int get_process_time();
 
 
 private:
+     /**
+     * The IP in address, IP out address, and processing time of request.
+     */
      string IP_in;
      string IP_out;
      int process_time;
