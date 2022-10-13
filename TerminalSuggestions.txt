@@ -1,0 +1,181 @@
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 12
+Time to run: 10000
+Starting queue size: 36
+Ending queue size: 4172
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ -----------//Maybe try increasing the number of servers
+
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 16
+Time to run: 10000
+Starting queue size: 48
+Ending queue size: 3911
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 40
+Time to run: 10000
+Starting queue size: 120
+Ending queue size: 2320
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 70
+Time to run: 10000
+Starting queue size: 210
+Ending queue size: 362
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ //Very close!
+
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 71
+Time to run: 10000
+Starting queue size: 213
+Ending queue size: 305
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 73
+Time to run: 10000
+Starting queue size: 219
+Ending queue size: 172
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 72
+Time to run: 10000
+Starting queue size: 216
+Ending queue size: 232
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$  ----------//Close as we can get. Maybe increasing the time range will lower the ending queue size
+
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ g++ -std=c++17 *.cpp
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 72
+Time to run: 10000
+Starting queue size: 216
+Ending queue size: 232
+Task time range: 90 - 170 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 100
+Time to run: 10000
+Starting queue size: 300
+Ending queue size: 0
+Task time range: 90 - 170 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 85
+Time to run: 10000 
+Starting queue size: 255
+Ending queue size: 315
+Task time range: 90 - 170 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 86
+Time to run: 10000
+Starting queue size: 258
+Ending queue size: 264
+Task time range: 90 - 170 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ///Another close range. Very balanced. 
+
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ///Observation: For 10,000 clock cycles, 72 servers and times ranging 70-150 OR 86 servers and times ranging from 90-170 are the best environments for a balanced load balancer
+
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 85
+Time to run: 10000
+Starting queue size: 255
+Ending queue size: 315
+Task time range: 90 - 170 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 84
+Time to run: 10000
+Starting queue size: 252
+Ending queue size: 370
+Task time range: 90 - 170 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 83
+Time to run: 10000
+Starting queue size: 249
+Ending queue size: 428
+Task time range: 90 - 170 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 82
+Time to run: 10000
+Starting queue size: 246
+Ending queue size: 486
+Task time range: 90 - 170 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 87
+Time to run: 10000
+Starting queue size: 261
+Ending queue size: 210
+Task time range: 90 - 170 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ 88
+-bash: 88: command not found
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 88
+Time to run: 10000
+Starting queue size: 264
+Ending queue size: 153
+Task time range: 90 - 170 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 89
+Time to run: 10000
+Starting queue size: 267
+Ending queue size: 103
+Task time range: 90 - 170 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 90
+Time to run: 10000
+Starting queue size: 270
+Ending queue size: 42
+Task time range: 90 - 170 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ // For 90-170 time range at 10,000 clock cycles, 82-89 servers keep a relatively balanced queue.
+-bash: //: is a directory
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ g++ -std=c++17 *.cpp
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 68   
+Time to run: 10000
+Starting queue size: 204
+Ending queue size: 494
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ 69
+-bash: 69: command not found
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 69
+Time to run: 10000
+Starting queue size: 207
+Ending queue size: 429
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 74
+Time to run: 10000
+Starting queue size: 222
+Ending queue size: 99
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ //For 70-150 time range at 10,000 clock cycles, 69-74 servers keep a relatively balanced queue.
+
+// To keep the queue balanced, the time range and number of servers should increase at the same time. 
+// For these observations, the queue started at (# servers)*3.

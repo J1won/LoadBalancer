@@ -4,7 +4,7 @@
 Request::Request() {
      IP_in = rand_IP();
      IP_out = rand_IP();
-     process_time = rand() % 50+1;
+     process_time = rand() % 150+70;
 }
 string Request::get_IP_in() {
      return IP_in;

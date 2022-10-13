@@ -30,7 +30,7 @@ int main() {
      Webserver wb(servers);
 
      //create an initial queue of server*2
-     for (int i = 0; i < servers*2; i++) {
+     for (int i = 0; i < servers*3; i++) {
           Request r;
           requests_q.push(r);
      }
@@ -50,13 +50,18 @@ int main() {
                wb.request_to_server(curr_req, idle_pos);
                requests_q.pop();
 
-               cout << "At " << curr_time << " " << wb.get_name(idle_pos) << " is processing request from ";
-               cout << curr_req.get_IP_in() << " to " << curr_req.get_IP_out() << endl; // << " for " << curr_req.get_process_time() <<" clockcycles" << endl;
+               //cout << "At " << curr_time << " " << wb.get_name(idle_pos) << " is processing request from ";
+               //cout << curr_req.get_IP_in() << " to " << curr_req.get_IP_out() << endl; // << " for " << curr_req.get_process_time() <<" clockcycles" << endl;
           }
 
           //exit when time is done OR (queue is empty AND all requests complete)
-          if( requests_q.empty() && wb.all_processors_empty())
+          if( requests_q.empty() && wb.all_processors_empty()) {
                break;
+               cout << "Empty Queue" << endl;
+          }       
      }
+     cout << "Starting queue size: " << servers*3 << endl;
+     cout << "Ending queue size: " << requests_q.size() << endl;
+     cout << "Task time range: 70 - 150 \n" << endl;
      return 0;
 }

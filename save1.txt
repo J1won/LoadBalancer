@@ -1,0 +1,260 @@
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 20
+Time to run: 10000
+Starting queue size: 40
+Ending queue size: 0
+Task time range: 1 - 50
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 15
+Time to run: 10000
+Starting queue size: 30
+Ending queue size: 0
+Task time range: 1 - 50
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 10
+Time to run: 10000
+Starting queue size: 20
+Ending queue size: 1129
+Task time range: 1 - 50
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 12  
+Time to run: 10000
+Starting queue size: 24
+Ending queue size: 360
+Task time range: 1 - 50
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 13
+Time to run: 10000
+Starting queue size: 26
+Ending queue size: 0
+Task time range: 1 - 50
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ g++ -std=c++17 *.cpp
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ g++ -std=c++17 *.cpp
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 10 
+Time to run: 10000
+Starting queue size: 20
+Ending queue size: 3064
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ 13
+-bash: 13: command not found
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 13
+Time to run: 10000
+Starting queue size: 26
+Ending queue size: 2486
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 16
+Time to run: 10000
+Starting queue size: 32
+Ending queue size: 1908
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 19
+Time to run: 10000
+Starting queue size: 38
+Ending queue size: 1327
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 25
+Time to run: 10000
+Starting queue size: 50
+Ending queue size: 153
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 30
+Time to run: 10000
+Starting queue size: 60
+Ending queue size: 0
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 28
+Time to run: 10000
+Starting queue size: 56
+Ending queue size: 0
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 27
+Time to run: 10000
+Starting queue size: 54
+Ending queue size: 0
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 26
+Time to run: 10000
+Starting queue size: 52
+Ending queue size: 0
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 25
+Time to run: 10000
+Starting queue size: 50
+Ending queue size: 153
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ///// keep 25 servers cannot be balanced. Try increasing runtime
+-bash: /////: is a directory
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 20
+Time to run: 100000
+Starting queue size: 40
+Ending queue size: 10470
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 50
+Time to run: 100000
+Starting queue size: 100
+Ending queue size: 0
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 35
+Time to run: 100000
+Starting queue size: 70
+Ending queue size: 0
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 28
+Time to run: 100000
+Starting queue size: 56
+Ending queue size: 0
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 24
+Time to run: 100000
+Starting queue size: 48
+Ending queue size: 2634
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 25
+Time to run: 100000
+Starting queue size: 50
+Ending queue size: 692
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 26
+Time to run: 100000
+Starting queue size: 52
+Ending queue size: 25
+Task time range: 1 - 100 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ // very close! Try increasing number of servers and time range
+-bash: //: is a directory
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ g++ -std=c++17 *.cpp
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 30
+Time to run: 100000
+Starting queue size: 60
+Ending queue size: 29322
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 35
+Time to run: 100000
+Starting queue size: 70
+Ending queue size: 25876
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 45
+Time to run: 100000
+Starting queue size: 90
+Ending queue size: 18967
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 55
+Time to run: 100000
+Starting queue size: 110
+Ending queue size: 12113
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 70 
+Time to run: 100000
+Starting queue size: 140
+Ending queue size: 1810
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 90
+Time to run: 100000
+Starting queue size: 180
+Ending queue size: 0
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 80
+Time to run: 100000
+Starting queue size: 160
+Ending queue size: 0
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 75
+Time to run: 100000
+Starting queue size: 150
+Ending queue size: 4
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 74
+Time to run: 100000
+Starting queue size: 148
+Ending queue size: 7
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 73
+Time to run: 100000
+Starting queue size: 146
+Ending queue size: 11
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 71
+Time to run: 100000
+Starting queue size: 142
+Ending queue size: 1129
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 72
+Time to run: 100000
+Starting queue size: 144
+Ending queue size: 447
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ //maybe try increasing starting queue size
+-bash: //maybe: No such file or directory
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ g++ -std=c++17 *.cpp
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 72
+Time to run: 100000
+Starting queue size: 216
+Ending queue size: 505
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ ./a.out
+Number of servers: 73
+Time to run: 100000
+Starting queue size: 219
+Ending queue size: 14
+Task time range: 70 - 150 
+
+(base) client-10-228-38-183:LoadBalancer jiwonlee$ 
