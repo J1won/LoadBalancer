@@ -70,7 +70,7 @@ public:
      * @return Integer of idle processor location.
      * @return -1 if there is no idle processor.
      */
-     int has_idle_processor();
+     int has_idle_processor(int curr_time);
 
      /**
      * @brief Checks if all processors are empty.

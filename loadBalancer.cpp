@@ -13,15 +13,12 @@ using namespace std;
  */
 
 int main() {
-     /// @brief 
      int servers = 0;
      int time = 0;
      int idle_pos = -1;
      Request curr_req;
      queue<Request> requests_q; //queue of requests
 
-     //ask for # servers
-     //ask for time to run
      cout << "Number of servers: ";
      cin >> servers;
      cout << "Time to run: "; //how long to run the load balancer
@@ -29,7 +26,7 @@ int main() {
 
      Webserver wb(servers);
 
-     //create an initial queue of server*2
+     //create an initial queue of servers*2
      for (int i = 0; i < servers*3; i++) {
           Request r;
           requests_q.push(r);
@@ -37,6 +34,7 @@ int main() {
 
      //manage the time
      for (int curr_time = 0; curr_time < time; curr_time++) {
+
           // simulate requests added at random times
           if (rand() % 2 > 0) {
                Request r;
@@ -44,7 +42,7 @@ int main() {
           }
 
           //if idle server, pop and send request to server
-          idle_pos = wb.has_idle_processor();
+          idle_pos = wb.has_idle_processor(curr_time);
           if (idle_pos != -1 && !requests_q.empty()){
                curr_req = requests_q.front();
                wb.request_to_server(curr_req, idle_pos);

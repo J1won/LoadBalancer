@@ -1,4 +1,4 @@
-
+#include <iostream>
 #include "Webserver.h"
 
 Webserver::Webserver(int servers) {
@@ -22,7 +22,7 @@ void Webserver::request_to_server(Request r, int idle_pos) {
      serverCollection[idle_pos].curr_req_throughput = r.get_process_time();
 }
 
-int Webserver::has_idle_processor() {
+int Webserver::has_idle_processor(int curr_time) {
      //loop through array and find a server that is not filled()
      // return position of array
      //make sure to loop through whole array even if you found the 
@@ -31,8 +31,10 @@ int Webserver::has_idle_processor() {
      int idle_pos = -1;
      for(int i = 0; i < arr_sz; i++) {
           if(!serverCollection[i].is_filled()) {
-               idle_pos = i;
+               cout << "At " << curr_time << " " << serverCollection[i].name << " is processing request from ";
+               cout << serverCollection[idle_pos].curr_req_inIP << " to " << serverCollection[idle_pos].curr_req_outIP << endl; // << " for " << curr_req.get_process_time() <<" clockcycles" << endl;
           }
+               idle_pos = i;
      }
      return idle_pos;
 
