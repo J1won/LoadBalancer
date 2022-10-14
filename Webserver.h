@@ -18,6 +18,7 @@ struct processor {
      /**
      * The name of the processor.
      */
+    
      char name;
 
      /**
