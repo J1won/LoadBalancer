@@ -15,6 +15,11 @@ string Request::get_IP_out() {
 int Request::get_process_time() {
      return process_time;
 }
+void Request::dec_time() {
+     cout << "what" <<endl;
+     process_time = process_time-1;
+     cout << "is" <<endl;
+}
 
 string Request::rand_IP() {
      string a = to_string( rand() % 256 );

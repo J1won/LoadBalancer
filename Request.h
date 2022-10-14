@@ -2,7 +2,7 @@
 
 #ifndef REQUEST_H
 #define REQUEST_H
-
+#include <iostream>
 #include <string>  
 using namespace std;
 
@@ -33,7 +33,7 @@ public:
      * @return Integer of the processing time.
      */
      int get_process_time();
-
+     void dec_time();
 
 private:
      /**
@@ -42,7 +42,7 @@ private:
      string IP_in;
      string IP_out;
      int process_time;
-
+     
      string rand_IP();
 
 

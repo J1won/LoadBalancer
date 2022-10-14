@@ -13,12 +13,15 @@ using namespace std;
  */
 
 int main() {
+     /// @brief 
      int servers = 0;
      int time = 0;
      int idle_pos = -1;
-     Request curr_req;
-     queue<Request> requests_q; //queue of requests
+     Request* curr_req;
+     queue<Request*> requests_q; //queue of requests
 
+     //ask for # servers
+     //ask for time to run
      cout << "Number of servers: ";
      cin >> servers;
      cout << "Time to run: "; //how long to run the load balancer
@@ -26,30 +29,31 @@ int main() {
 
      Webserver wb(servers);
 
-     //create an initial queue of servers*2
+     //create an initial queue of server*2
      for (int i = 0; i < servers*3; i++) {
-          Request r;
+          Request* r = new Request;
           requests_q.push(r);
      }
-
      //manage the time
      for (int curr_time = 0; curr_time < time; curr_time++) {
-
           // simulate requests added at random times
           if (rand() % 2 > 0) {
-               Request r;
+               Request* r = new Request;
                requests_q.push(r);
           }
 
           //if idle server, pop and send request to server
-          idle_pos = wb.has_idle_processor(curr_time);
+          idle_pos = wb.has_idle_processor();
           if (idle_pos != -1 && !requests_q.empty()){
                curr_req = requests_q.front();
                wb.request_to_server(curr_req, idle_pos);
+
+               delete curr_req;
+               curr_req = NULL;
                requests_q.pop();
 
-               //cout << "At " << curr_time << " " << wb.get_name(idle_pos) << " is processing request from ";
-               //cout << curr_req.get_IP_in() << " to " << curr_req.get_IP_out() << endl; // << " for " << curr_req.get_process_time() <<" clockcycles" << endl;
+               cout << "At " << curr_time << " " << wb.get_name(idle_pos) << " is processing request from ";
+               cout << curr_req->get_IP_in() << " to " << curr_req->get_IP_out() << endl; // << " for " << curr_req.get_process_time() <<" clockcycles" << endl;
           }
 
           //exit when time is done OR (queue is empty AND all requests complete)
@@ -57,6 +61,15 @@ int main() {
                break;
                cout << "Empty Queue" << endl;
           }       
+     }
+
+     for(int i = 0; i < requests_q.size(); i++) {
+          if(requests_q.front() != NULL) {
+               delete requests_q.front();
+               requests_q.front() = NULL;
+               requests_q.pop();
+
+          }
      }
      cout << "Starting queue size: " << servers*3 << endl;
      cout << "Ending queue size: " << requests_q.size() << endl;

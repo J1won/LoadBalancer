@@ -1,6 +1,7 @@
 #ifndef WEBSERVER_H
 #define WEBSERVER_H
 
+#include <iostream>
 #include "Request.h"
 #include <string>   
 using namespace std;
@@ -11,9 +12,10 @@ struct processor {
      /**
      * The time, IP in, and IP out of the current request.
      */
-     int curr_req_throughput;
-     string curr_req_inIP;
-     string curr_req_outIP;
+     // int curr_req_throughput;
+     // string curr_req_inIP;
+     // string curr_req_outIP;
+     Request* curr_request;
 
      /**
      * The name of the processor.
@@ -26,9 +28,10 @@ struct processor {
      * @param n Name of the processor
      */
      processor(char n) : name(n) {
-          curr_req_throughput = 0;
-          curr_req_inIP = "";
-          curr_req_outIP = "";
+          // curr_req_throughput = 0;
+          // curr_req_inIP = "";
+          // curr_req_outIP = "";
+          curr_request = NULL;
      }
 
      /**
@@ -37,8 +40,11 @@ struct processor {
      * @return false if the request time is done.
      */
      bool is_filled() {
-          curr_req_throughput--;
-          return curr_req_throughput > 0;
+          // curr_req_throughput--;
+          // return curr_req_throughput > 0;
+          curr_request->dec_time();
+               cout << "probelm 6" <<endl;
+          return curr_request->get_process_time() > 0;
      }
 
 };
@@ -63,14 +69,14 @@ public:
      /**
      * @brief Accept a request and insert into empty processor.
      */
-     void request_to_server(Request r, int idle_pos);
+     void request_to_server(Request* r, int idle_pos);
 
      /**
      * @brief Returns position the next empty server.
      * @return Integer of idle processor location.
      * @return -1 if there is no idle processor.
      */
-     int has_idle_processor(int curr_time);
+     int has_idle_processor();
 
      /**
      * @brief Checks if all processors are empty.
