@@ -1,6 +1,6 @@
 #ifndef WEBSERVER_H
 #define WEBSERVER_H
-#include <iostream>
+
 #include "Request.h"
 #include <string>   
 using namespace std;
@@ -18,7 +18,6 @@ struct processor {
      /**
      * The name of the processor.
      */
-    
      char name;
 
      /**
@@ -64,7 +63,7 @@ public:
      /**
      * @brief Accept a request and insert into empty processor.
      */
-     void request_to_server(Request* r, int idle_pos);
+     void request_to_server(Request r, int idle_pos);
 
      /**
      * @brief Returns position the next empty server.
@@ -99,4 +98,3 @@ private:
      int arr_sz;
 };
 #endif
-
