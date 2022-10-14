@@ -16,8 +16,8 @@ int main() {
      int servers = 0;
      int time = 0;
      int idle_pos = -1;
-     Request curr_req;
-     queue<Request> requests_q; //queue of requests
+     Request* curr_req;
+     queue<Request*> requests_q; //queue of requests
 
      cout << "Number of servers: ";
      cin >> servers;
@@ -29,7 +29,7 @@ int main() {
      //create an initial queue of servers*2
      for (int i = 0; i < servers*3; i++) {
           Request r;
-          requests_q.push(r);
+          requests_q.push(&r);
      }
 
      //manage the time
@@ -38,7 +38,7 @@ int main() {
           // simulate requests added at random times
           if (rand() % 2 > 0) {
                Request r;
-               requests_q.push(r);
+               requests_q.push(&r);
           }
 
           //if idle server, pop and send request to server

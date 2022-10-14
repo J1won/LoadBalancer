@@ -16,10 +16,11 @@ Webserver::~Webserver() {
      free(serverCollection);
 }
 
-void Webserver::request_to_server(Request r, int idle_pos) {
-     serverCollection[idle_pos].curr_req_inIP = r.get_IP_in();
-     serverCollection[idle_pos].curr_req_outIP = r.get_IP_out();
-     serverCollection[idle_pos].curr_req_throughput = r.get_process_time();
+void Webserver::request_to_server(Request* r, int idle_pos) {
+     serverCollection[idle_pos].curr_req_inIP = (*r).get_IP_in();
+     serverCollection[idle_pos].curr_req_outIP = (*r).get_IP_out();
+     serverCollection[idle_pos].curr_req_throughput = (*r).get_process_time();
+     cout << serverCollection[idle_pos].curr_req_inIP << endl;
 }
 
 int Webserver::has_idle_processor(int curr_time) {
@@ -31,11 +32,11 @@ int Webserver::has_idle_processor(int curr_time) {
      int idle_pos = -1;
      for(int i = 0; i < arr_sz; i++) {
           if(!serverCollection[i].is_filled()) {
-               cout << "At " << curr_time << " " << serverCollection[i].name << " is processing request from ";
-               cout << serverCollection[idle_pos].curr_req_inIP << " to " << serverCollection[idle_pos].curr_req_outIP << endl; // << " for " << curr_req.get_process_time() <<" clockcycles" << endl;
-          }
                idle_pos = i;
+          }
      }
+     cout << "At " << curr_time << " " << serverCollection[idle_pos].name << " processed request from ";
+     cout << serverCollection[idle_pos].curr_req_inIP << " to " << serverCollection[idle_pos].curr_req_outIP << endl; 
      return idle_pos;
 
 }
