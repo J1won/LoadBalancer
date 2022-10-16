@@ -45,20 +45,14 @@ struct processor {
           if(!curr_request)
                return false;
 
+          // if(curr_request->get_process_time() <= 0) 
+          // delete curr_req;
+          // curr_req = NULL;
+          // requests_q.pop();
+
           curr_request->dec_time();
-
-          if(curr_request->get_process_time() <= 0) {
-               //cout << "At " << curr_time << " " << wb.get_name(idle_pos) << " is processing request from ";
-               cout << curr_req->get_IP_in() << " to " << curr_req->get_IP_out() << endl; 
-
-               delete curr_req;
-               curr_req = NULL;
-               requests_q.pop();
-
-               return false;
-
-          }
-          return true;
+          cout << curr_request->get_IP_in() << ": " << curr_request->get_process_time();
+          return curr_request->get_process_time() > 0;
      }
 
 };

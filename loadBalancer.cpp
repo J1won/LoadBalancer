@@ -58,15 +58,20 @@ int main() {
 
           //if idle server, pop and send request to server
           idle_pos = wb.has_idle_processor();
-          cout << "has_idle_processor done" << idle_pos<<endl;
+
           if (idle_pos != -1 && !requests_q.empty()){
                curr_req = requests_q.front();
                wb.request_to_server(curr_req, idle_pos);
-               cout << "request_to_server done" <<endl;
+
+               
                
               
                // cout << "At " << curr_time << " " << wb.get_name(idle_pos) << " is processing request from ";
                // cout << curr_req->get_IP_in() << " to " << curr_req->get_IP_out() << endl; 
+
+               delete curr_req;
+               curr_req = NULL;
+               requests_q.pop();
                
                
           }

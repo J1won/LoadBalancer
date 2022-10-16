@@ -16,7 +16,7 @@ int Request::get_process_time() {
      return process_time;
 }
 void Request::dec_time() {
-     process_time = process_time-1;
+     process_time--;
 }
 
 string Request::rand_IP() {
