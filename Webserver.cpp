@@ -21,8 +21,6 @@ void Webserver::request_to_server(Request* r, int idle_pos) {
      // serverCollection[idle_pos].curr_req_outIP = r->get_IP_out();
      // serverCollection[idle_pos].curr_req_throughput = r->get_process_time();
      serverCollection[idle_pos].curr_request = r;
-     cout << "this is done" <<endl;
-
 }
 
 int Webserver::has_idle_processor() {
@@ -37,7 +35,6 @@ int Webserver::has_idle_processor() {
                idle_pos = i;
           }
      }
-     cout << "probelm 2" <<endl;
      return idle_pos;
 
 }

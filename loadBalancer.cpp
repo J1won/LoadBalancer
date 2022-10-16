@@ -18,7 +18,7 @@ int main() {
      int time = 0;
      int idle_pos = -1;
      Request* curr_req;
-     queue<Request*> requests_q; //queue of requests
+     //queue<Request*> requests_q; //queue of requests
 
      //ask for # servers
      //ask for time to run
@@ -29,31 +29,46 @@ int main() {
 
      Webserver wb(servers);
 
+     queue<Request*> requests_q; 
+
      //create an initial queue of server*2
      for (int i = 0; i < servers*3; i++) {
-          Request* r = new Request;
-          requests_q.push(r);
+          // Request r;
+          // Request* rr = &r;
+          Request* rr = new Request();
+          //cout << "made: " << rr << endl;
+          requests_q.push(rr);
      }
+
+     
+
+     // for(int i = 0; i < requests_q.size(); i++) {
+     //      cout << "madeThis: " << requests_q.front() << endl;
+     //      requests_q.pop();
+     //      //then delete it
+     // }
+
      //manage the time
      for (int curr_time = 0; curr_time < time; curr_time++) {
           // simulate requests added at random times
           if (rand() % 2 > 0) {
-               Request* r = new Request;
-               requests_q.push(r);
+               Request* rr = new Request();
+               requests_q.push(rr);
           }
 
           //if idle server, pop and send request to server
           idle_pos = wb.has_idle_processor();
+          cout << "has_idle_processor done" << idle_pos<<endl;
           if (idle_pos != -1 && !requests_q.empty()){
                curr_req = requests_q.front();
                wb.request_to_server(curr_req, idle_pos);
-
-               delete curr_req;
-               curr_req = NULL;
-               requests_q.pop();
-
-               cout << "At " << curr_time << " " << wb.get_name(idle_pos) << " is processing request from ";
-               cout << curr_req->get_IP_in() << " to " << curr_req->get_IP_out() << endl; // << " for " << curr_req.get_process_time() <<" clockcycles" << endl;
+               cout << "request_to_server done" <<endl;
+               
+              
+               // cout << "At " << curr_time << " " << wb.get_name(idle_pos) << " is processing request from ";
+               // cout << curr_req->get_IP_in() << " to " << curr_req->get_IP_out() << endl; 
+               
+               
           }
 
           //exit when time is done OR (queue is empty AND all requests complete)

@@ -42,9 +42,23 @@ struct processor {
      bool is_filled() {
           // curr_req_throughput--;
           // return curr_req_throughput > 0;
+          if(!curr_request)
+               return false;
+
           curr_request->dec_time();
-               cout << "probelm 6" <<endl;
-          return curr_request->get_process_time() > 0;
+
+          if(curr_request->get_process_time() <= 0) {
+               //cout << "At " << curr_time << " " << wb.get_name(idle_pos) << " is processing request from ";
+               cout << curr_req->get_IP_in() << " to " << curr_req->get_IP_out() << endl; 
+
+               delete curr_req;
+               curr_req = NULL;
+               requests_q.pop();
+
+               return false;
+
+          }
+          return true;
      }
 
 };
